@@ -1,4 +1,4 @@
-var requestURL = '../../assets/json/productsData.json';
+var requestURL = '../assets/json/productsData.json';
 var request = new XMLHttpRequest();
 
 request.open('GET', requestURL);
