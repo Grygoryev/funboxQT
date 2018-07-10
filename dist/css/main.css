@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box; }
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+span,
+figure {
+  padding: 0;
+  margin: 0; }
+
+button, a {
+  box-shadow: none;
+  border: none;
+  text-decoration: none;
+  outline: none;
+  display: block; }
+
+a:link, a:visited, a:focus {
+  color: inherit; }
+
+@font-face {
+  font-family: 'Exo-2';
+  src: url("../../assets/fonts/Exo2.0-Thin.otf") format("otf");
+  font-weight: 100;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Trebuchet-MSC';
+  src: url("../assets/fonts/TrebuchetMS-Bold.ttf") format("ttf");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Trebuchet-MSC';
+  src: url("../assets/fonts/TrebuchetMS-regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+body {
+  background: #000; }
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto; }
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap; }
+
+.products-catalog {
+  max-width: 1120px;
+  width: 100%;
+  margin: 0 auto; }
+  .products-catalog__title {
+    font: 100 normal 36px/1 "Exo-2", "Arial", sans-serif;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 31px; }
+  .products-catalog__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-flow: row wrap;
+    width: 100%; }
+
+.product-card {
+  width: 320px;
+  position: relative;
+  color: #000;
+  overflow: hidden;
+  background: linear-gradient(135deg, transparent 31px, #1698d9 0);
+  padding: 4px;
+  border-radius: 11px;
+  margin-bottom: 30px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+  .product-card__container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: unset;
+    flex-flow: column nowrap;
+    min-height: 489px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    color: #000;
+    background: linear-gradient(135deg, transparent 29px, #f2f2f2 0); }
+  .product-card__header {
+    padding-top: 20px;
+    padding-left: 44px;
+    margin-bottom: 10px; }
+  .product-card__label {
+    font: 400 normal 16px/1 "Trebuchet MS", "Arial", sans-serif;
+    color: #666; }
+  .product-card__body {
+    width: 100%;
+    overflow: hidden;
+    padding-left: 44px; }
+  .product-card__name {
+    font: bold normal 48px/1 "Trebuchet MS", "Arial", sans-serif;
+    margin-bottom: 4px; }
+  .product-card__taste {
+    font: bold normal 24px/1 "Trebuchet MS", "Arial", sans-serif;
+    margin-bottom: 17px; }
+  .product-card__bonus, .product-card__quantity, .product-card__customer-state {
+    font: 300 normal 14px/16px "Trebuchet MS", "Arial", sans-serif;
+    color: #666; }
+  .product-card__footer {
+    min-height: 300px;
+    margin-top: auto;
+    background: url("../img/cat-funbox.png") no-repeat 49% -52%; }
+  .product-card__weight {
+    position: absolute;
+    bottom: 12px;
+    right: 10px;
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #1698d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    font: normal normal 42px/38px "Trebuchet MS", "Arial", sans-serif; }
+  .product-card__weight-measure {
+    font: 100 normal 21px/1 "Trebuchet MS", "Arial", sans-serif; }
+  .product-card__signature {
+    color: #fff;
+    position: absolute;
+    bottom: -25px;
+    z-index: 4; }

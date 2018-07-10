@@ -1,0 +1,29 @@
+body {
+  //background: linear-gradient(180deg, $black 40%, rgba($black, 0.5) 60%, $black 60%) no-repeat;
+  background: $black;
+}
+
+$fontExo2: 'Exo-2', 'Arial', sans-serif;
+$fontTrebuchet: 'Trebuchet MS', 'Arial', sans-serif;
+
+
+$colorProductCard: #1698d9;
+$colorProductCard--hover: #2ea8e6;
+$colorProductCard--selected: #d91667;
+$colorProductCard--selectedHover: #e62e7a;
+$colorProductCard-bg: #f2f2f2;
+
+$colorGray: #666;
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.page {
+  @include flex(center, center);
+
+  //height: 100vh;
+    //background: url('../img/funbox-qt/bg.png');
+}

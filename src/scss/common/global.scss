@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+span,
+figure {
+  padding: 0;
+  margin: 0;
+}
+
+button, a {
+  box-shadow: none;
+  border: none;
+  text-decoration: none;
+  outline: none;
+  display: block;
+}
+
+a {
+  //&:hover,
+  //&:active,
+  &:link,
+  &:visited,
+  &:focus {
+    color: inherit;
+  }
+}

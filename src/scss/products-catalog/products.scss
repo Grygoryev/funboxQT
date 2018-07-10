@@ -1,0 +1,19 @@
+.products-catalog {
+  max-width: 1120px;
+  width: 100%;
+  margin: 0 auto;
+
+  &__title {
+    @include font(36px, 1, 100, normal, $fontExo2);
+
+    color: $white;
+    text-align: center;
+    margin-bottom: 31px;
+  }
+
+  &__body {
+    @include flex(space-between, stretch, row wrap);
+
+    width: 100%;
+  }
+}

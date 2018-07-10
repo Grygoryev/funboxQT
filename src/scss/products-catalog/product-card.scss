@@ -1,0 +1,96 @@
+.product-card {
+  //max-width: 320px;
+  //width: 100%;
+  width: 320px; //fix for issue in safari 9.1.2
+  position: relative;
+  color: $black;
+  overflow: hidden;
+  background: linear-gradient(135deg, transparent 31px, $colorProductCard 0);
+  padding: 4px;
+  border-radius: 11px;
+  margin-bottom: 30px;
+  //clip-path: polygon(43px 0, 100% 0, 100% 100%, 0% 100%, 0 43px);
+  user-select: none;
+
+  &__container {
+    @include flex(flex-start, unset, column nowrap);
+
+    min-height: 489px;
+    width: 100%;
+    //height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    color: $black;
+    background: linear-gradient(135deg, transparent 29px, $colorProductCard-bg 0);
+  }
+
+  &__header {
+    padding-top: 20px;
+    padding-left: 44px;
+    margin-bottom: 10px;
+  }
+
+  &__label {
+    @include font(16px, 1, 400, normal, $fontTrebuchet);
+
+    color: $colorGray;
+  }
+
+  &__body {
+    width: 100%;
+    overflow: hidden;
+    padding-left: 44px;
+  }
+
+  &__name {
+    @include font(48px, 1, bold, normal, $fontTrebuchet);
+
+    margin-bottom: 4px;
+  }
+
+  &__taste {
+    @include font(24px, 1, bold, normal, $fontTrebuchet);
+
+    margin-bottom: 17px
+  }
+
+  &__bonus,
+  &__quantity,
+  &__customer-state {
+    @include font(14px, 16px, 300, normal, $fontTrebuchet);
+
+    color: $colorGray;
+  }
+
+  &__footer {
+    min-height: 300px;
+    margin-top: auto;
+    background: url("../img/cat-funbox.png") no-repeat 49% -52%
+  }
+
+  &__weight {
+    position: absolute;
+    bottom: 12px;
+    right: 10px;
+    width: 82px;
+    height: 82px;;
+    border-radius: 50%;
+    color: $white;
+    background-color: $colorProductCard;
+
+    @include flex(center, center, column nowrap);
+    @include font(42px, 38px, normal, normal, $fontTrebuchet);
+  }
+
+  &__weight-measure {
+    @include font(21px, 1, 100, normal, $fontTrebuchet);
+  }
+
+  &__signature {
+    color: $white;
+    position: absolute;
+    bottom: -25px;
+    z-index: 4;
+  }
+}
