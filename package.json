@@ -14,7 +14,8 @@
   },
   "dependencies": {
     "gulp": "^4.0.0-build.a271520",
-    "gulp-4.0.build": "^4.0.0-build.a271520"
+    "gulp-4.0.build": "^4.0.0-build.a271520",
+    "hoek": "^5.0.3"
   },
   "devDependencies": {
     "browser-sync": "^2.24.5",
