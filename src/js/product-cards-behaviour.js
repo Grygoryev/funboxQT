@@ -61,9 +61,11 @@ $(document).ready(function () {
 
     $(this).toggleClass(cardSelected);
     counterClick.next();
+    console.log("CounterClickCurrent = " + counterClick.current());
     if (counterClick.current() % 2 === 0 ) {
       $(this).removeClass(cardSelectedHover);
       counterHover.reset();
+      counterClick.reset();
     }
 
     console.log("clicked: " + counterClick.current() + "; hovered: " +  counterHover.current());
@@ -72,11 +74,13 @@ $(document).ready(function () {
 
       if (counterHover.current() !== 0 && $(this).hasClass(cardSelected)) {
         $(this).addClass(cardSelectedHover);
+        $(this).removeClass(cardHover);
       }
     });
 
     $(this).mouseleave(function () {
       $(this).removeClass(cardSelectedHover);
+      $(this).removeClass(cardHover);
       counterHover.next();
     });
 
