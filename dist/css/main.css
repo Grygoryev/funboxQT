@@ -168,6 +168,9 @@ body {
 .product-card_hover .product-card__weight {
   background-color: #2ea8e6; }
 
+.product-card_hover .product-card__buy-btn {
+  color: #2ea8e6; }
+
 .product-card_selected .product-card__board {
   background: linear-gradient(135deg, transparent 31px, #d91667 0); }
 

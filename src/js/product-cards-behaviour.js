@@ -29,7 +29,7 @@ $(document).ready(function () {
       cardSelectedHover = 'product-card_selected-hover';
 
   //------- counter for cards -------//
-  function MakeCounter() {
+  function makeCounter() {
     var currentCount = 0;
 
     return {
@@ -48,8 +48,8 @@ $(document).ready(function () {
     };
   }
 
-  var counterClick = new MakeCounter();
-  var counterHover =  new MakeCounter();
+  var counterClick = makeCounter(); //
+  var counterMouseLeave =  makeCounter(); //this will count mouseLeave events and is necessary for postponing hover+select effect
 
   //---------------------------------//
 
@@ -60,19 +60,27 @@ $(document).ready(function () {
   card.click(function () {
 
     $(this).toggleClass(cardSelected);
-    counterClick.next();
-    console.log("CounterClickCurrent = " + counterClick.current());
+    counterClick.setValue(2); // when card is selected for the first time, counterClick accept value multiple to 2
+
+
+    console.log("mouseLeave: " +  counterMouseLeave.current() + "; selectClick: " +  counterClick.current());
+
+    //next click on card will nullify counterClick and counterMouseLeave values by reset() method
+    // That is the way to make cards behaviour(on select and select+hover) independent from each other
     if (counterClick.current() % 2 === 0 ) {
       $(this).removeClass(cardSelectedHover);
-      counterHover.reset();
+      counterMouseLeave.reset();
       counterClick.reset();
     }
 
-    console.log("clicked: " + counterClick.current() + "; hovered: " +  counterHover.current());
 
     $(this).mouseenter(function () {
 
-      if (counterHover.current() !== 0 && $(this).hasClass(cardSelected)) {
+      //for the first time, when card is selected+hover, there is a checking
+      //That's way becoming possible to delay hover effect on 2nd time
+      //Further, after mouseleave event, counterMouseLeave gets value more than 0
+      //and select+hover begins to work
+      if (counterMouseLeave.current() !== 0 && $(this).hasClass(cardSelected)) {
         $(this).addClass(cardSelectedHover);
         $(this).removeClass(cardHover);
       }
@@ -81,7 +89,8 @@ $(document).ready(function () {
     $(this).mouseleave(function () {
       $(this).removeClass(cardSelectedHover);
       $(this).removeClass(cardHover);
-      counterHover.next();
+      counterMouseLeave.next();
+      console.log("mouseLeave: " +  counterMouseLeave.current());
     });
 
   });
