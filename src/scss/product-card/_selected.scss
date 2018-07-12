@@ -1,0 +1,10 @@
+.product-card_selected {
+
+  .product-card__board {
+    background: linear-gradient(135deg, transparent 31px, $colorProductCard--selected 0);
+  }
+
+  .product-card__weight {
+    background-color: $colorProductCard--selected;
+  }
+}

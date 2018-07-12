@@ -1,0 +1,10 @@
+.product-card_hover {
+
+  .product-card__board {
+    background: linear-gradient(135deg, transparent 31px, $colorProductCard--hover 0);
+  }
+
+  .product-card__weight {
+    background-color: $colorProductCard--hover;
+  }
+}

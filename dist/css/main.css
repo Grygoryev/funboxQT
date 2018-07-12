@@ -22,29 +22,11 @@ button, a {
 a:link, a:visited, a:focus {
   color: inherit; }
 
-@font-face {
-  font-family: 'Exo-2';
-  src: url("../../assets/fonts/Exo2.0-Thin.otf") format("otf");
-  font-weight: 100;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Trebuchet-MSC';
-  src: url("../assets/fonts/TrebuchetMS-Bold.ttf") format("ttf");
-  font-weight: bold;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Trebuchet-MSC';
-  src: url("../assets/fonts/TrebuchetMS-regular.ttf") format("ttf");
-  font-weight: normal;
-  font-style: normal; }
-
 body {
   background: #000; }
 
 .container {
-  max-width: 1200px;
+  max-width: 1120px;
   width: 100%;
   margin: 0 auto; }
 
@@ -52,12 +34,30 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-flow: row nowrap; }
+  flex-flow: row nowrap;
+  min-height: 100vh; }
+
+@font-face {
+  font-family: "Exo-2";
+  src: url("../assets/fonts/Exo2.0-Thin.otf");
+  font-weight: 100;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Trebuchet-MSC';
+  src: url("../assets/fonts/TrebuchetMS-Bold.ttf");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Trebuchet-MSC';
+  src: url("../assets/fonts/TrebuchetMS-regular.ttf");
+  font-weight: normal;
+  font-style: normal; }
 
 .products-catalog {
-  max-width: 1120px;
-  width: 100%;
-  margin: 0 auto; }
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0, transparent 20%, transparent 90%, rgba(0, 0, 0, 0.5) 100%), url("../img/bg.png");
+  width: 100%; }
   .products-catalog__title {
     font: 100 normal 36px/1 "Exo-2", "Arial", sans-serif;
     color: #fff;
@@ -68,27 +68,35 @@ body {
     justify-content: space-between;
     align-items: stretch;
     flex-flow: row wrap;
+    max-width: 100%;
     width: 100%; }
 
 .product-card {
-  width: 320px;
   position: relative;
-  color: #000;
-  overflow: hidden;
-  background: linear-gradient(135deg, transparent 31px, #1698d9 0);
-  padding: 4px;
-  border-radius: 11px;
-  margin-bottom: 30px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none; }
+  cursor: pointer; }
+  @media (max-width: 960px) {
+    .product-card:last-of-type {
+      margin: 0 auto; } }
+  .product-card__board {
+    width: 320px;
+    position: relative;
+    color: #000;
+    overflow: hidden;
+    background: linear-gradient(135deg, transparent 31px, #1698d9 0);
+    padding: 4px;
+    border-radius: 11px;
+    margin-bottom: 30px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
   .product-card__container {
     display: flex;
     justify-content: flex-start;
     align-items: unset;
     flex-flow: column nowrap;
-    min-height: 489px;
+    min-height: 472px;
+    height: 100%;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -116,15 +124,15 @@ body {
     font: 300 normal 14px/16px "Trebuchet MS", "Arial", sans-serif;
     color: #666; }
   .product-card__footer {
-    min-height: 300px;
+    min-height: 285px;
     margin-top: auto;
-    background: url("../img/cat-funbox.png") no-repeat 49% -52%; }
+    background: url("../img/cat-funbox.png") no-repeat 46% -21%; }
   .product-card__weight {
     position: absolute;
-    bottom: 12px;
-    right: 10px;
-    width: 82px;
-    height: 82px;
+    bottom: 10px;
+    right: 10.5px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     color: #fff;
     background-color: #1698d9;
@@ -140,3 +148,34 @@ body {
     position: absolute;
     bottom: -25px;
     z-index: 4; }
+  .product-card__signature {
+    font: 100 normal 13px/16px "Trebuchet MS", "Arial", sans-serif;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 100%;
+    text-align: center; }
+  .product-card__buy-btn {
+    border-bottom: 1px dotted #1698d9;
+    color: #1698d9;
+    display: inline; }
+
+.product-card_hover .product-card__board {
+  background: linear-gradient(135deg, transparent 31px, #2ea8e6 0); }
+
+.product-card_hover .product-card__weight {
+  background-color: #2ea8e6; }
+
+.product-card_selected .product-card__board {
+  background: linear-gradient(135deg, transparent 31px, #d91667 0); }
+
+.product-card_selected .product-card__weight {
+  background-color: #d91667; }
+
+.product-card_selected-hover .product-card__board {
+  background: linear-gradient(135deg, transparent 31px, #e62e7a 0); }
+
+.product-card_selected-hover .product-card__weight {
+  background-color: #e62e7a; }

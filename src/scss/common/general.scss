@@ -16,7 +16,7 @@ $colorProductCard-bg: #f2f2f2;
 $colorGray: #666;
 
 .container {
-  max-width: 1200px;
+  max-width: 1120px;
   width: 100%;
   margin: 0 auto;
 }
@@ -24,6 +24,5 @@ $colorGray: #666;
 .page {
   @include flex(center, center);
 
-  //height: 100vh;
-    //background: url('../img/funbox-qt/bg.png');
+  min-height: 100vh;
 }

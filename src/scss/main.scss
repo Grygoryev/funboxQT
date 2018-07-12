@@ -1,10 +1,11 @@
 @import "common/global";
 @import "common/variables";
 @import "common/mixins";
-
+@import "common/general";
 @import "common/fonts";
 
-@import "common/general";
-
-@import "products-catalog/products";
-@import "products-catalog/product-card";
+@import "products-catalog/products-catalog";
+@import "product-card/product-card";
+@import "product-card/_hover";
+@import "product-card/_selected";
+@import "product-card/_selected-hover";

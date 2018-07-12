@@ -1,23 +1,32 @@
 .product-card {
-  //max-width: 320px;
-  //width: 100%;
-  width: 320px; //fix for issue in safari 9.1.2
   position: relative;
-  color: $black;
-  overflow: hidden;
-  background: linear-gradient(135deg, transparent 31px, $colorProductCard 0);
-  padding: 4px;
-  border-radius: 11px;
-  margin-bottom: 30px;
-  //clip-path: polygon(43px 0, 100% 0, 100% 100%, 0% 100%, 0 43px);
-  user-select: none;
+  cursor: pointer;
+
+  &:last-of-type {
+    @include respond-to-max($lg) {
+
+      margin: 0 auto;
+    }
+  }
+
+  &__board {
+    width: 320px; //fix for issue with flex-box in safari 9.1.2
+    position: relative;
+    color: $black;
+    overflow: hidden;
+    background: linear-gradient(135deg, transparent 31px, $colorProductCard 0);
+    padding: 4px;
+    border-radius: 11px;
+    margin-bottom: 30px;
+    user-select: none;
+  }
 
   &__container {
     @include flex(flex-start, unset, column nowrap);
 
-    min-height: 489px;
+    min-height: 472px;
+    height: 100%;
     width: 100%;
-    //height: 100%;
     position: relative;
     overflow: hidden;
     border-radius: 8px;
@@ -64,17 +73,18 @@
   }
 
   &__footer {
-    min-height: 300px;
+    min-height: 285px;
+
     margin-top: auto;
-    background: url("../img/cat-funbox.png") no-repeat 49% -52%
+    background: url("../img/cat-funbox.png") no-repeat 46% -21%;
   }
 
   &__weight {
     position: absolute;
-    bottom: 12px;
-    right: 10px;
-    width: 82px;
-    height: 82px;;
+    bottom: 10px;
+    right: 10.5px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     color: $white;
     background-color: $colorProductCard;
@@ -92,5 +102,22 @@
     position: absolute;
     bottom: -25px;
     z-index: 4;
+  }
+
+  &__signature {
+    @include font(13px, 16px, 100, normal, $fontTrebuchet);
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+  }
+
+  &__buy-btn {
+    border-bottom: 1px dotted $colorProductCard;
+    color: $colorProductCard;
+    display: inline;
   }
 }
