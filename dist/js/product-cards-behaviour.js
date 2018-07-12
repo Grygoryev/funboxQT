@@ -61,11 +61,16 @@ $(document).ready(function () {
 
     $(this).toggleClass(cardSelected);
     counterClick.next();
+    if (counterClick.current() % 2 === 0 ) {
+      $(this).removeClass(cardSelectedHover);
+      counterHover.reset();
+    }
+
     console.log("clicked: " + counterClick.current() + "; hovered: " +  counterHover.current());
 
     $(this).mouseenter(function () {
 
-      if (counterHover.current() !== 0) {
+      if (counterHover.current() !== 0 && $(this).hasClass(cardSelected)) {
         $(this).addClass(cardSelectedHover);
       }
     });
