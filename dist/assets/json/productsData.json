@@ -8,6 +8,14 @@
       "bonus" : "мышь в подарок",
       "weight" : "0.5",
       "weightMeasure" : "кг",
+      "signature" :
+        {
+          "default" : "Чего сидишь? Порадуй котэ, ",
+          "defaultBtn" : "купи",
+          "selected" : "Печень утки разворная с артишоками",
+          "disabled" : "Печалька, с фуа-гра закончился"
+        },
+      "customerState" : "заказчик доволен",
       "available" : true
     },
     {
@@ -18,6 +26,15 @@
       "bonus" : "2 мыши в подарок",
       "weight" : "2",
       "weightMeasure" : "кг",
+      "signature" :
+        {
+          "default" : "Чего сидишь? Порадуй котэ, ",
+          "defaultBtn" : "купи",
+          "selected" : "Печень утки разворная с артишоками",
+          "disabled" : "Печалька, с рыбой закончился"
+        }
+      ,
+      "customerState" : "заказчик доволен",
       "available" : true
     },
     {
@@ -28,6 +45,14 @@
       "bonus" : "5 мышей в подарок",
       "weight" : "5",
       "weightMeasure" : "кг",
+      "signature" :
+        {
+          "default" : "Чего сидишь? Порадуй котэ, ",
+          "defaultBtn" : "купи",
+          "selected" : "Печень утки разворная с артишоками",
+          "disabled" : "Печалька, с курой закончился"
+        }
+      ,
       "customerState" : "заказчик доволен",
       "available" : false
     }

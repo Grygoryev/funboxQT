@@ -15,9 +15,12 @@ var productCards = document.querySelector('.products-catalog__body');
 function showProductsData(jsonObj) {
   var products = jsonObj['products'];
 
-  for (var i = 0; i < products.length; i++) {
+  for (i = 0; i < products.length; i++) {
     var productCard = document.createElement('figure');
     productCard.className = 'product-card';
+
+    var productCardBoard = document.createElement('div');
+    productCardBoard.className = 'product-card__board';
 
     var productCardContainer = document.createElement('div');
     productCardContainer.className = 'product-card__container';
@@ -30,6 +33,9 @@ function showProductsData(jsonObj) {
 
     var productCardFooter = document.createElement('footer');
     productCardFooter.className = 'product-card__footer';
+
+    var productCardSignature = document.createElement('div');
+    productCardSignature.className = 'product-card__signature';
 
     var label = document.createElement('p');
     label.className = 'product-card__label';
@@ -55,6 +61,12 @@ function showProductsData(jsonObj) {
     var weightMeasure = document.createElement('div');
     weightMeasure.className = 'product-card__weight-measure';
 
+    var signature = document.createElement('div');
+    signature.className = "product-card__signature";
+
+    var buyBtn = document.createElement('a');
+    buyBtn.className = 'product-card__buy-btn';
+
     var available = products[i].available;
 
     label.textContent = products[i].label;
@@ -65,8 +77,14 @@ function showProductsData(jsonObj) {
     weight.textContent = products[i].weight;
     weightMeasure.textContent = products[i].weightMeasure;
     customerState.textContent = products[i].customerState;
+    signature.textContent = products[i].signature.default;
+    buyBtn.textContent = products[i].signature.defaultBtn;
 
-    productCard.appendChild(productCardContainer);
+    productCard.appendChild(productCardBoard);
+    productCard.appendChild(signature);
+    signature.appendChild(buyBtn);
+
+    productCardBoard.appendChild(productCardContainer);
     productCardContainer.appendChild(productCardHeader);
     productCardContainer.appendChild(productCardBody);
     productCardContainer.appendChild(productCardFooter);
@@ -81,14 +99,12 @@ function showProductsData(jsonObj) {
     productCardFooter.appendChild(weight);
     weight.appendChild(weightMeasure);
 
-    if ("customerState" in products[i]) {
+    if (available === false) {
+      productCard.className = 'product-card product-card_disable';
       productCardBody.appendChild(customerState)
     }
 
-    if (available === false) {
-      productCard.className = 'product-card product-card_disable';
-    }
-
     productCards.appendChild(productCard);
+
   }
 }

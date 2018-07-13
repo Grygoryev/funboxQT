@@ -4,6 +4,10 @@
     background: linear-gradient(135deg, transparent 31px, $colorProductCard--selectedHover 0);
   }
 
+  .product-card__label {
+    color: $colorProductCard--selectedHover;
+  }
+
   .product-card__weight {
     background-color: $colorProductCard--selectedHover;
   }

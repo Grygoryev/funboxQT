@@ -17,19 +17,23 @@ function makeEqualHeight(columns) {
 makeEqualHeight(columns);
 
 
-//------------------------------------------------------//
-//making cards change color depending on mouse movements//
-//------------------------------------------------------//
+//------------------------------------------------------------------//
+//making cards change color and content depending on mouse movements//
+//------------------------------------------------------------------//
 
 $(document).ready(function () {
 
   var card = $('.product-card'),
       cardHover = 'product-card_hover',
       cardSelected = ('product-card_selected'),
-      cardSelectedHover = 'product-card_selected-hover';
+      cardSelectedHover = 'product-card_selected-hover',
+      label = $('.product-card__label'),
+      signature = $('.product-card__signature'),
+      signatureSelected = $('.signature-selected'),
+      signatureHidden = ('signature-hidden');
 
-  var clickPermission = false;
-  var hoverPermission = false;
+  var cardClicked = false;
+  var hoverPostPone = false;
 
   card.hover(function () {
     $(this).toggleClass(cardHover);
@@ -37,32 +41,36 @@ $(document).ready(function () {
 
   card.click(function () {
 
-    $(this).toggleClass(cardSelected);
-    clickPermission = true;
-
-    //next click on card will nullify counterClick and counterMouseLeave values by reset() method
-    // That is the way to make cards behaviour(on select and select+hover) independent from each other
-    if (clickPermission) {
-      $(this).removeClass(cardSelectedHover);
-      clickPermission = false;
-      hoverPermission = false;
+    if ($(this).hasClass('product-card_disabled')) {
+      return false;
     }
 
+    $(this).toggleClass(cardSelected);
+    cardClicked = true;
+
+    $(this).find(signature).toggleClass(signatureHidden);
+    $(this).find(signatureSelected).toggleClass(signatureHidden);
+
+    if (cardClicked) {
+      $(this).removeClass(cardSelectedHover);
+      $(this).find(label).html('Сказочное заморское яство');
+
+      cardClicked = false;
+      hoverPostPone = false;
+    }
 
     $(this).mouseenter(function () {
 
-      //for the first time, when card is selected+hover, there is a checking
-      //That's way becoming possible to delay hover effect on 2nd time
-      //Further, after mouseleave event, counterMouseLeave gets value more than 0
-      //and select+hover begins to work
-      if (hoverPermission && $(this).hasClass(cardSelected)) {
+      if (hoverPostPone && $(this).hasClass(cardSelected)) {
         $(this).addClass(cardSelectedHover);
+        $(this).find(label).html('Котэ не одобряет?');
       }
     });
 
     $(this).mouseleave(function () {
       $(this).removeClass(cardSelectedHover);
-      hoverPermission = true;
+      $(this).find(label).html('Сказочное заморское яство');
+      hoverPostPone = true;
     });
 
   });

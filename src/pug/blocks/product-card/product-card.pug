@@ -8,8 +8,12 @@
       "bonus" : "мышь в подарок",
       "weight" : "0,5",
       "weightMeasure" : "кг",
-      "signDefault" : "Чего сидишь? Порадуй котэ, ",
-      "buyBtn" : "купи",
+      "signature" :  {
+        "default" : "Чего сидишь? Порадуй котэ, ",
+        "defaultBtn" : "купи",
+        "selected" : "Печень утки разворная с артишоками",
+        "disabled" : "Печалька, с фуа-гра закончился"
+      },
       "available" : true
     },
     {
@@ -20,8 +24,12 @@
       "bonus" : "2 мыши в подарок",
       "weight" : "2",
       "weightMeasure" : "кг",
-      "signDefault" : "Чего сидишь? Порадуй котэ, ",
-      "buyBtn" : "купи",
+      "signature" :  {
+        "default" : "Чего сидишь? Порадуй котэ, ",
+        "defaultBtn" : "купи",
+        "selected" : "Головы щучьи с чесноком, да свежайшая сёмушка",
+        "disabled" : "Печалька, с рыбой закончился"
+      },
       "available" : true
     },
     {
@@ -33,31 +41,63 @@
       "weight" : "5",
       "weightMeasure" : "кг",
       "customerState" : "заказчик доволен",
-      "signDefault" : "Чего сидишь? Порадуй котэ, ",
-      "buyBtn" : "купи",
+      "signature" :  {
+        "default" : "Чего сидишь? Порадуй котэ, ",
+        "defaultBtn" : "купи",
+        "selected" : "Печень утки разворная с артишоками",
+        "disabled" : "Печалька, с курой закончился"
+      },
       "available" : false
     }
   ]
 
-for items in productData
-  figure.product-card
-    .product-card__board
-      .product-card__container
-        header.product-card__header
-          .product-card__label #{items.label}
-        .product-card__body
-          h2.product-card__name #{items.name}
-          p.product-card__taste #{items.taste}
-          p.product-card__quantity #{items.quantity}
-          p.product-card__bonus #{items.bonus}
-        footer.product-card__footer
-          .product-card__weight #{items.weight}
-            .product-card__weight-measure #{items.weightMeasure}
-    p.product-card__signature
-      | #{items.signDefault}
-      a.product-card__buy-btn #{items.buyBtn}
+mixin product-card(data)
+  for items in data
+    if (!items.available)
+      figure.product-card&attributes({class : "product-card_disabled"})
+        .product-card__board
+          .product-card__container
+            header.product-card__header
+              .product-card__label #{items.label}
+            .product-card__body
+              h2.product-card__name #{items.name}
+              p.product-card__taste #{items.taste}
+              p.product-card__quantity #{items.quantity}
+              p.product-card__bonus #{items.bonus}
+              if (!items.available)
+                p.product-card__customer-state #{items.customerState}
+            footer.product-card__footer
+              .product-card__weight #{items.weight}
+                .product-card__weight-measure #{items.weightMeasure}
+        p.product-card__signature.signature-hidden
+          | #{items.signature.default}
+          a.product-card__buy-btn #{items.signature.defaultBtn}
+        p.signature-selected.signature-hidden
+          | #{items.signature.selected}
+        p.signature-disabled
+          | #{items.signature.disabled}
+    else
+      figure.product-card
+        .product-card__board
+          .product-card__container
+            header.product-card__header
+              .product-card__label #{items.label}
+            .product-card__body
+              h2.product-card__name #{items.name}
+              p.product-card__taste #{items.taste}
+              p.product-card__quantity #{items.quantity}
+              p.product-card__bonus #{items.bonus}
+              if (!items.available)
+                p.product-card__customer-state #{items.customerState}
+            footer.product-card__footer
+              .product-card__weight #{items.weight}
+                .product-card__weight-measure #{items.weightMeasure}
+        p.product-card__signature
+          | #{items.signature.default}
+          a.product-card__buy-btn #{items.signature.defaultBtn}
+        p.signature-selected.signature-hidden
+          | #{items.signature.selected}
+        p.signature-disabled.signature-hidden
+          | #{items.signature.disabled}
 
-
-
-
-
++product-card(productData)

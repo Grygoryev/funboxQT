@@ -121,3 +121,25 @@
     display: inline;
   }
 }
+
+.signature-hidden {
+  display: none;
+}
+
+.signature-selected,
+.signature-disabled,
+.signature-hidden {
+  @include font(13px, 16px, 100, normal, $fontTrebuchet);
+
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  color: $white;
+}
+
+.signature-disabled {
+  color: #ffff66;
+}

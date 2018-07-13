@@ -1,0 +1,34 @@
+.product-card_disabled {
+
+  .product-card__board {
+    background: linear-gradient(135deg, transparent 31px, $colorProductCard--disabled 0);
+    position: relative;
+
+    &::after {
+      content: '';
+      background: linear-gradient(135deg, transparent 31px, rgba($colorProductCard--disabled, 0.1) 0);
+      position: absolute;
+      padding: 4px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .product-card__label,
+  .product-card__body,
+  .product-card__quantity,
+  .product-card__customer-state,
+  .product-card__bonus {
+    color: $colorProductCard--disabled;
+  }
+
+  .product-card__footer {
+    background: url("../img/cat-funbox_disabled.png") no-repeat 46% -21%;
+  }
+
+  .product-card__weight {
+    background-color: $colorProductCard--disabled;
+  }
+}

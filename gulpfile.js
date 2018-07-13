@@ -4,7 +4,6 @@ const gulp = require('gulp'),
       sass = require('gulp-sass'),
       pug = require('gulp-pug'),
       debug = require('gulp-debug'),
-      fs = require('fs'),
       del = require('del'),
       autoprefixer = require('gulp-autoprefixer'),
       browserSync = require('browser-sync').create();
