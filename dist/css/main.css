@@ -148,23 +148,12 @@ body {
     position: absolute;
     bottom: -25px;
     z-index: 4; }
-  .product-card__signature {
-    font: 100 normal 13px/16px "Trebuchet MS", "Arial", sans-serif;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    width: 100%;
-    text-align: center; }
   .product-card__buy-btn {
     border-bottom: 1px dotted #1698d9;
     color: #1698d9;
     display: inline; }
 
-.signature-hidden {
-  display: none; }
-
+.signature-origin,
 .signature-selected,
 .signature-disabled,
 .signature-hidden {
@@ -177,6 +166,9 @@ body {
   width: 100%;
   text-align: center;
   color: #fff; }
+
+.signature-hidden {
+  display: none; }
 
 .signature-disabled {
   color: #ffff66; }

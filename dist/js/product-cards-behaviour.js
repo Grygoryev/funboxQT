@@ -28,7 +28,7 @@ $(document).ready(function () {
       cardSelected = ('product-card_selected'),
       cardSelectedHover = 'product-card_selected-hover',
       label = $('.product-card__label'),
-      signature = $('.product-card__signature'),
+      signature = $('.signature-origin'),
       signatureSelected = $('.signature-selected'),
       signatureHidden = ('signature-hidden');
 
