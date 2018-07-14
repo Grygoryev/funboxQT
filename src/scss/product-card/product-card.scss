@@ -65,11 +65,18 @@
   }
 
   &__bonus,
+  &__bonus-measure,
   &__quantity,
+  &__quantity-measure,
   &__customer-state {
     @include font(14px, 16px, 300, normal, $fontTrebuchet);
 
     color: $colorGray;
+  }
+
+  &__bonus,
+  &__quantity {
+    font-weight: 600;
   }
 
   &__footer {

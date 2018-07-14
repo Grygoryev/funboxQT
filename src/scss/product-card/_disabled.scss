@@ -2,25 +2,15 @@
 
   .product-card__board {
     background: linear-gradient(135deg, transparent 31px, $colorProductCard--disabled 0);
-    position: relative;
-
-    &::after {
-      content: '';
-      background: linear-gradient(135deg, transparent 31px, rgba($colorProductCard--disabled, 0.1) 0);
-      position: absolute;
-      padding: 4px;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
   }
 
   .product-card__label,
   .product-card__body,
   .product-card__quantity,
+  .product-card__quantity-measure,
   .product-card__customer-state,
-  .product-card__bonus {
+  .product-card__bonus,
+  .product-card__bonus-measure {
     color: $colorProductCard--disabled;
   }
 

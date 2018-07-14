@@ -6,7 +6,9 @@
       h2.product-card__name #{items.name}
       p.product-card__taste #{items.taste}
       p.product-card__quantity #{items.quantity}
+        span.product-card__quantity-measure #{items.quantityMeasure}
       p.product-card__bonus #{items.bonus}
+        span.product-card__bonus-measure #{items.bonusMeasure}
       if (!items.available)
         p.product-card__customer-state #{items.customerState}
     footer.product-card__footer
