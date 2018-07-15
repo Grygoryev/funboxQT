@@ -16,20 +16,14 @@ function makeEqualHeight(columns) {
 
 makeEqualHeight(columns);
 
+
+//IE fix for making product-catalog being centered vertically
 var userEnvironment = detect.parse(navigator.userAgent);
-
-// Выводим нужные значения в консоли браузера
-console.log(
-    userEnvironment.browser.family,
-userEnvironment.browser.version,
-userEnvironment.os.name
-);
-
 var mainPage = $('.page');
 var userBrowser = userEnvironment.browser.family;
 
 if (userBrowser === 'IE') {
-  mainPage.css('height', '100vh'); //fix for IE for making product-catalog being centered vertically
+  mainPage.css('height', '100vh');
 }
 
 
