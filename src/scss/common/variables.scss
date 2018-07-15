@@ -1,13 +1,21 @@
 //screen resolutions
 
-$sm: 450px;
-$md: 768px;
-$lg: 960px;
-$xl: 1200px;
+$sm: 420px; //small
+$md: 767px; //medium
+$lg: 1200px; //large
 
-//main-colors
-$black: #000;
-$white: #fff;
 
-//font-set
-$font-family-base: 'Makazi', 'Arial', sans-serif;
+$fontExo2: 'Exo-2', 'Arial', sans-serif;
+$font-family-base: 'Trebuchet MS', 'Arial', sans-serif;
+
+
+$colorProductCard: #1698d9;
+$colorProductCard--hover: #2ea8e6;
+$colorProductCard--selected: #d91667;
+$colorProductCard--selectedHover: #e62e7a;
+$colorProductCard--disabled: #b3b3b3;
+$colorProductCard-bg: #f2f2f2;
+
+$colorGray: #666;
+$colorBlack: #000;
+$colorWhite: #fff;

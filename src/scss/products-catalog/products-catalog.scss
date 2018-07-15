@@ -1,13 +1,26 @@
 .products-catalog {
-  background: linear-gradient(to bottom, rgba($black, 0.5) 0, transparent 20%, transparent 90%, rgba($black, 0.5) 100%),
+  background: linear-gradient(to bottom,
+                $colorBlack 0%,
+                rgba($colorBlack, 0.35) 10%,
+                transparent 20%,
+                transparent 75%,
+                rgba($colorBlack, 0.35) 90%,
+                $colorBlack 100%
+              ),
               url("../img/bg.png");
   width: 100%;
 
+  &__header {
+    @include respond-to-max($sm) {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
 
   &__title {
     @include font(36px, 1, 100, normal, $fontExo2);
 
-    color: $white;
+    color: $colorWhite;
     text-align: center;
     margin-bottom: 31px;
   }
@@ -17,6 +30,14 @@
 
     max-width: 100%;
     width: 100%;
+
+    @include respond-to-max($lg) {
+      justify-content: center;
+    }
+
+    @include respond-to-max($sm) {
+      display: block;
+    }
   }
 }
 

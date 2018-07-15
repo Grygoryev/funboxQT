@@ -35,29 +35,34 @@ body {
   justify-content: center;
   align-items: center;
   flex-flow: row nowrap;
-  min-height: 100vh; }
+  min-height: 100vh;
+  overflow-x: hidden; }
 
 @font-face {
   font-family: "Exo-2";
-  src: url("../assets/fonts/Exo2.0-Thin.otf");
+  src: url("../assets/fonts/Exo2.0-Thin.otf") format("truetype");
   font-weight: 100;
   font-style: normal; }
 
 @font-face {
-  font-family: 'Trebuchet-MSC';
+  font-family: 'Trebuchet MS-custom';
   src: url("../assets/fonts/TrebuchetMS-Bold.ttf");
   font-weight: bold;
   font-style: normal; }
 
 @font-face {
-  font-family: 'Trebuchet-MSC';
+  font-family: 'Trebuchet MS-custom';
   src: url("../assets/fonts/TrebuchetMS-regular.ttf");
   font-weight: normal;
   font-style: normal; }
 
 .products-catalog {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0, transparent 20%, transparent 90%, rgba(0, 0, 0, 0.5) 100%), url("../img/bg.png");
+  background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.35) 10%, transparent 20%, transparent 75%, rgba(0, 0, 0, 0.35) 90%, #000 100%), url("../img/bg.png");
   width: 100%; }
+  @media (max-width: 420px) {
+    .products-catalog__header {
+      padding-left: 5px;
+      padding-right: 5px; } }
   .products-catalog__title {
     font: 100 normal 36px/1 "Exo-2", "Arial", sans-serif;
     color: #fff;
@@ -70,13 +75,33 @@ body {
     flex-flow: row wrap;
     max-width: 100%;
     width: 100%; }
+    @media (max-width: 1200px) {
+      .products-catalog__body {
+        justify-content: center; } }
+    @media (max-width: 420px) {
+      .products-catalog__body {
+        display: block; } }
 
 .product-card {
   position: relative;
-  cursor: pointer; }
-  @media (max-width: 960px) {
-    .product-card:last-of-type {
-      margin: 0 auto; } }
+  cursor: pointer;
+  margin-bottom: 25px; }
+  @media (max-width: 1200px) {
+    .product-card {
+      padding-left: 30px;
+      padding-right: 30px; } }
+  @media (max-width: 767px) {
+    .product-card {
+      padding-left: 10px;
+      padding-right: 10px; } }
+  @media (max-width: 420px) {
+    .product-card {
+      padding-left: 0;
+      padding-right: 0;
+      max-width: 320px; } }
+  @media (max-width: 767px) {
+    .product-card {
+      margin: 0 auto 15px; } }
   .product-card__board {
     width: 320px;
     position: relative;
@@ -85,18 +110,17 @@ body {
     background: linear-gradient(135deg, transparent 31px, #1698d9 0);
     padding: 4px;
     border-radius: 11px;
-    margin-bottom: 30px;
     -webkit-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none;
-            user-select: none; }
+            user-select: none;
+    margin-bottom: 15px; }
   .product-card__container {
     display: flex;
     justify-content: flex-start;
     align-items: unset;
     flex-flow: column nowrap;
     min-height: 472px;
-    height: 100%;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -145,11 +169,6 @@ body {
     font: normal normal 42px/38px "Trebuchet MS", "Arial", sans-serif; }
   .product-card__weight-measure {
     font: 100 normal 21px/1 "Trebuchet MS", "Arial", sans-serif; }
-  .product-card__signature {
-    color: #fff;
-    position: absolute;
-    bottom: -25px;
-    z-index: 4; }
   .product-card__buy-btn {
     border-bottom: 1px dotted #1698d9;
     color: #1698d9;
@@ -160,13 +179,9 @@ body {
 .signature-disabled,
 .signature-hidden {
   font: 100 normal 13px/16px "Trebuchet MS", "Arial", sans-serif;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
   width: 100%;
   text-align: center;
+  margin: 0 auto;
   color: #fff; }
 
 .signature-hidden {

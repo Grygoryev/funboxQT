@@ -10,11 +10,27 @@ function makeEqualHeight(columns) {
   }
 
   for (i = 0; i < columns.length; i++) {
-    columns[i].style.minHeight = tallestColumn + 'px';
+    columns[i].style.height = tallestColumn + 'px';
   }
 }
 
 makeEqualHeight(columns);
+
+var userEnvironment = detect.parse(navigator.userAgent);
+
+// Выводим нужные значения в консоли браузера
+console.log(
+    userEnvironment.browser.family,
+userEnvironment.browser.version,
+userEnvironment.os.name
+);
+
+var mainPage = $('.page');
+var userBrowser = userEnvironment.browser.family;
+
+if (userBrowser === 'IE') {
+  mainPage.css('height', '100vh'); //fix for IE for making product-catalog being centered vertically
+}
 
 
 //------------------------------------------------------------------//
