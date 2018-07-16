@@ -159,5 +159,8 @@ Q8
 	- humanforce.com
 	- andersenlab.com
 	- faire-zinsen.de
+	
+Также я начал делать портфолио, однако имеющиеся сейчас там материалы требуют рефакторинга и доработки: 
 
-Сейчас я чувствую, что пора двигаться дальше и нахожусь в поиске более интересной и сложной работы.
+репозиторий: https://github.com/Grygoryev/newbie
+демо: https://grygoryev.github.io/newbie/dist/
