@@ -63,9 +63,9 @@ mixin product-card(data)
   for items in data
     if (!items.available)
       figure.product-card&attributes({class : "product-card_disabled"})
-        include card-content
+        include product-card__content
     else
       figure.product-card
-        include card-content
+        include product-card__content
 
 +product-card(productData)
