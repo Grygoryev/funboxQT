@@ -16,14 +16,16 @@ function makeEqualHeight(columns) {
 
 makeEqualHeight(columns);
 
+//-----------------------------------------------------------//
+//IE fix for making product-catalog being centered vertically//
+//-----------------------------------------------------------//
 
-//IE fix for making product-catalog being centered vertically
 var userEnvironment = detect.parse(navigator.userAgent);
-var mainPage = $('.page');
+var page = $('.page');
 var userBrowser = userEnvironment.browser.family;
 
 if (userBrowser === 'IE') {
-  mainPage.css('height', '100vh');
+  page.css('height', '100vh');
 }
 
 
@@ -37,6 +39,7 @@ $(document).ready(function () {
       cardHover = 'product-card_hover',
       cardSelected = ('product-card_selected'),
       cardSelectedHover = 'product-card_selected-hover',
+
       label = $('.product-card__label'),
       signature = $('.signature-origin'),
       signatureSelected = $('.signature-selected'),

@@ -1,20 +1,9 @@
 @font-face {
-  font-family: "Exo-2";
-  src: url("../assets/fonts/Exo2.0-Thin.otf") format("truetype");
+  font-family: 'Exo-2';
+  src: url('../assets/fonts/Exo2.0-Thin.otf'),
+       url('../assets/fonts/Exo2.0-thin-webfont.woff2') format('woff2'),
+       url('../assets/fonts/Exo2.0-thin-webfont.woff') format('woff'),
+       url('../assets/fonts/Exo2.0-thin-webfont.eot') format('eot');
   font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Trebuchet MS-custom';
-  src: url("../assets/fonts/TrebuchetMS-Bold.ttf");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Trebuchet MS-custom';
-  src: url("../assets/fonts/TrebuchetMS-regular.ttf");
-  font-weight: normal;
   font-style: normal;
 }
