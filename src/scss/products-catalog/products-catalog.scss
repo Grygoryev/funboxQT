@@ -11,10 +11,8 @@
   width: 100%;
 
   &__header {
-    @include respond-to-max($sm) {
-      padding-left: 5px;
-      padding-right: 5px;
-    }
+    padding-left: 5px;
+    padding-right: 5px;
   }
 
   &__title {
@@ -26,17 +24,12 @@
   }
 
   &__body {
-    @include flex(space-between, stretch, row wrap);
 
     max-width: 100%;
     width: 100%;
 
-    @include respond-to-max($lg) {
-      justify-content: center;
-    }
-
-    @include respond-to-max($sm) {
-      display: block;
+    @include respond-to-min($sm) {
+      @include flex(space-between, stretch, row wrap);
     }
   }
 }

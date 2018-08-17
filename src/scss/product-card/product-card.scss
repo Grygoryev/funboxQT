@@ -1,26 +1,13 @@
 .product-card {
   position: relative;
   cursor: pointer;
-  margin-bottom: 25px;
+  margin: 0 auto 15px;
+  max-width: 320px;
+  box-sizing: content-box;
 
-  @include respond-to-max($lg) {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
-  @include respond-to-max($md) {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  @include respond-to-max($sm) {
-    padding-left: 0;
-    padding-right: 0;
-    max-width: 320px;
-  }
-
-  @include respond-to-max($md) {
-    margin: 0 auto 15px;
+  @include respond-to-min($sm) {
+      padding-left: 10px;
+      padding-right: 10px;
   }
 
   &__board {
