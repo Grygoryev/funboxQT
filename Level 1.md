@@ -159,5 +159,5 @@ Q8
 	
 Портфолио: 
 
-репозиторий: https://github.com/Grygoryev/newbie
-демо: https://grygoryev.github.io/newbie/dist/
+Демо: https://grygoryev.github.io/newbie/dist/
+Исходные файлы: https://github.com/Grygoryev/newbie
