@@ -142,7 +142,7 @@ Q7
 	- learn.javascript.ru
 	- developer.mozilla.org/
 
-+ статьи на medium, habrahabr, в блогах веб-разработчиков, материалы на youtube
++ статьи на medium, habrahabr, блоги веб-разработчиков, материалы на youtube
 
 
 
