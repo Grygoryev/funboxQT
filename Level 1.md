@@ -138,7 +138,6 @@ Q7
 
 В основном, ресурсы, которые я сейчас использую для развития, это:
 
-	- htmlacademy.ru
 	- freecodecamp.org
 	- learn.javascript.ru
 	- developer.mozilla.org/
